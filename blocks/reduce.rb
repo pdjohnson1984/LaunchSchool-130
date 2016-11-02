@@ -10,12 +10,6 @@ def reduce(arr, starting_value = 0)
   accumulator
 end
 
-
-and
-ads
-
-
-
 array = [1, 2, 3, 4, 5]
 
 p reduce(array) { |acc, num| acc + num }                    # => 15
