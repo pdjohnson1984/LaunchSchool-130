@@ -109,6 +109,10 @@ class TodoList
     select { |todo| todo.title == todo_title}.first
   end
 
+  def done?
+    @todos.all? { |todo| todo.done? }
+  end
+
   def all_done
     select { |todo| todo.done?}
   end
@@ -118,7 +122,7 @@ class TodoList
   end
 
   def mark_done(todo_title)
-     find_by_title(todo_title) && find_by_title(todo_title).done!
+    find_by_title(todo_title) && find_by_title(todo_title).done!
   end
 
   def mark_all_done
