@@ -77,7 +77,7 @@ class TodoList
   end
 
   def remove_at(index)
-    @todos.delete(item_at(idx))
+    @todos.delete(item_at(index))
   end
 
   def to_s
@@ -111,6 +111,12 @@ class TodoList
 
   def done?
     @todos.all? { |todo| todo.done? }
+  end
+
+  def done!
+    @todos.each_index do |idx|
+      mark_done_at(idx)
+    end
   end
 
   def all_done
